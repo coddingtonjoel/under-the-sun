@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.monospace {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.stage {
+    height: 100vh;
+    background-color: #222;
+}
+
+.header {
+    font-family: "Open Sans";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    top: 35%;
+    display: inline-block;
+    left: 50%;
+    font-size: 60px;
+    transform: translate(-50%, -50%);
+}
+
+.line {
+    background-color: white;
+    height: 3px;
+    display: inline-block;
+    width: 500px;
+    opacity: 0.2;
+    position: absolute;
+    border-radius: 30px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

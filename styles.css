@@ -8,33 +8,70 @@
     font-family: "Courier New", Courier, monospace;
 }
 
-.stage {
-    height: 100vh;
+html {
+    overflow-x: hidden;
     background-color: #222;
 }
 
-.header {
+.stage {
+    height: 1000vh;
+}
+
+.header-container {
+    padding-top: 300px;
+}
+
+.header,
+.header-alt-1,
+.header-alt-2,
+.header-alt-3,
+.header-alt-4 {
     font-family: "Open Sans";
     font-weight: 800;
     text-transform: uppercase;
     color: white;
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.header-alt-1,
+.header-alt-2,
+.header-alt-3,
+.header-alt-4 {
+    text-align: left;
     position: absolute;
-    top: 35%;
-    display: inline-block;
-    left: 50%;
-    font-size: 60px;
-    transform: translate(-50%, -50%);
+    opacity: 0;
+    left: 65%;
+    transform: translateX(-50%);
+    width: 400px;
 }
 
 .line {
     background-color: white;
     height: 3px;
     display: inline-block;
-    width: 500px;
+    width: 400px;
     opacity: 0.2;
     position: absolute;
     border-radius: 30px;
-    top: 40%;
+    top: 102%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.quote-container {
+    opacity: 0;
+    color: white;
+    position: absolute;
+}
+
+.quote {
+    font-size: 2rem;
+    line-height: 3;
+    width: 70vw;
+}
+
+.author {
+    font-size: 1.2rem;
 }

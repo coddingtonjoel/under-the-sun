@@ -10,6 +10,9 @@
 
 html {
     overflow-x: hidden;
+}
+
+.stage-one {
     background-color: #222;
 }
 
@@ -19,6 +22,7 @@ html {
 
 .header-container {
     padding-top: 300px;
+    background-color: #222;
 }
 
 .header,
@@ -92,4 +96,10 @@ html {
     display: block;
     text-align: right;
     opacity: 0.4;
+}
+
+.stage-two {
+    margin-top: 800px;
+    background-color: white;
+    padding-top: 400px;
 }

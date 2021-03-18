@@ -1,9 +1,11 @@
-const quote = CSSRulePlugin.getRule(".quote-one::after");
-// const quoteTwo = CSSRulePlugin.getRule(".quote-two:after");
-// const quoteThree = CSSRulePlugin.getRule(".quote-three:after");
-// const quoteFour = CSSRulePlugin.getRule(".quote-four:after");
 let tl = new TimelineMax();
 let controller = new ScrollMagic.Controller();
+
+//----------------
+// SCENE 1
+//
+// INTRODUCTION
+//----------------
 
 // header shift left
 tl.to(".header", 1.5, { right: "13%", top: "100%" });
@@ -101,6 +103,7 @@ tl.to(".quote-container", 1, { opacity: 1 });
 
 // move line to starting place of text
 tl.to(".line", { x: "20px" });
+const quote = CSSRulePlugin.getRule(".quote-one::after");
 
 // shift ::after of line 1
 tl.to(quote, 5, {
@@ -205,7 +208,11 @@ tl.to(".line", 1, {
     .to(".line", 1, {
         delay: 0.5,
         opacity: 0.2,
-    });
+    })
+    .to(".line", 1, {
+        opacity: 0,
+    })
+    .to(quote, 0, { opacity: 0 });
 
 let scene = new ScrollMagic.Scene({
     duration: 8000,
@@ -214,4 +221,21 @@ let scene = new ScrollMagic.Scene({
 })
     .setPin(".header-container")
     .setTween(tl)
+    .addTo(controller);
+
+//----------------
+// SCENE 2
+//
+// MIND VS BODY
+//----------------
+
+let tl2 = new TimelineMax();
+
+let scene2 = new ScrollMagic.Scene({
+    duration: 8000,
+    triggerHook: 0.5,
+    triggerElement: ".mind-body-container",
+})
+    .setPin(".mind-body-container")
+    .setTween(tl2)
     .addTo(controller);

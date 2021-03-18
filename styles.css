@@ -64,14 +64,32 @@ html {
     opacity: 0;
     color: white;
     position: absolute;
+    left: 0;
 }
 
 .quote {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 3;
+    position: relative;
     width: 70vw;
 }
 
+.quote-one::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #222;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 1;
+}
+
 .author {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    display: block;
+    text-align: right;
+    opacity: 0.4;
 }

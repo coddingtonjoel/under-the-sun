@@ -12,6 +12,8 @@ html {
     overflow-x: hidden;
 }
 
+/* SCENE ONE */
+
 .stage-one {
     background-color: #222;
 }
@@ -30,13 +32,27 @@ html {
 .header-alt-2,
 .header-alt-3,
 .header-alt-4 {
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     color: white;
     position: relative;
     text-align: center;
     font-size: 3rem;
+}
+
+.header-sub {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    color: white;
+    opacity: 0.1;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 50%;
+    top: 115%;
+    text-transform: uppercase;
+    text-align: center;
+    transform: translate(-50%, -50%);
 }
 
 .header-alt-1,
@@ -98,8 +114,38 @@ html {
     opacity: 0.4;
 }
 
+/* SCENE TWO */
+
 .stage-two {
     margin-top: 800px;
     background-color: white;
-    padding-top: 400px;
+    padding-top: 500px;
+    padding-bottom: 500px;
+}
+
+.squares {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.stage-two-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    text-align: center;
+}
+
+.stage-two-header h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+
+.stage-two-header p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.4rem;
 }

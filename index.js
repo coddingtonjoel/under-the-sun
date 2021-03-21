@@ -7,6 +7,9 @@ let controller = new ScrollMagic.Controller();
 // INTRODUCTION
 //----------------
 
+// hide "scroll to begin"
+tl.to(".header-sub", 2, { opacity: 0 });
+
 // header shift left
 tl.to(".header", 1.5, { right: "13%", top: "100%" });
 
@@ -215,7 +218,7 @@ tl.to(".line", 1, {
     .to(quote, 0, { opacity: 0 });
 
 let scene = new ScrollMagic.Scene({
-    duration: 8000,
+    duration: 10000,
     triggerHook: 0.5,
     triggerElement: ".scene",
 })
@@ -231,8 +234,41 @@ let scene = new ScrollMagic.Scene({
 
 let tl2 = new TimelineMax();
 
+// squares stagger in
+tl2.staggerFrom(
+    [
+        ".squares-one",
+        ".squares-two",
+        ".squares-three",
+        ".squares-four",
+        ".squares-five",
+        ".squares-six",
+        ".squares-seven",
+        ".squares-eight",
+        ".squares-nine",
+    ],
+    5,
+    { transform: "scale(0)", opacity: 0, ease: "power4.out" },
+    0.2
+);
+
+// squares on bottom disappear
+tl2.to(".squares-bottom", 2, { opacity: 0, delay: 1 });
+
+// rest of squares fade away above
+tl2.to(".squares", 3, { opacity: 0, y: "-700px", ease: "power2.out" }, "-=1");
+
+// reposition words "mind" and "body"
+tl2.to(".mind", 2, { x: -100, ease: "power4.out" });
+tl2.to(".body", 2, { x: 100, ease: "power4.out" }, "-=2");
+tl2.to(".mind", 2, { y: 50, ease: "power4.out" });
+tl2.to(".body", 2, { y: -47, ease: "power4.out" }, "-=2");
+
+// move header up, 6 seconds ago
+tl2.to(".stage-two-header", 3, { y: -100, ease: "power2.out" }, "-=6");
+
 let scene2 = new ScrollMagic.Scene({
-    duration: 8000,
+    duration: 3000,
     triggerHook: 0.5,
     triggerElement: ".mind-body-container",
 })

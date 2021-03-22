@@ -190,7 +190,9 @@ html {
 
 .mind-body-chart-circleone,
 .mind-body-chart-circletwo,
-.mind-body-chart-circlethree {
+.mind-body-chart-circlethree,
+.wisdom-circleone,
+.wisdom-circletwo {
     stroke-dasharray: 113;
     stroke-dashoffset: 113;
 }
@@ -207,17 +209,17 @@ html {
 
 .mind-body-descartes {
     left: 68%;
-    transform: translate(-50%, -205%);
+    transform: translate(-50%, -180%);
 }
 
 .mind-body-bacon {
     left: 25%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -20%);
 }
 
 .mind-body-pascal {
     left: 68%;
-    transform: translate(-50%, 95%);
+    transform: translate(-50%, 125%);
 }
 
 .mind-body-concl {
@@ -253,7 +255,7 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -230%);
+    transform: translate(-50%, -250%);
     text-align: center;
 }
 
@@ -262,4 +264,56 @@ html {
     font-weight: 900;
     font-size: 3.5rem;
     color: white;
+}
+
+.wisdom-line {
+    stroke-dasharray: 633;
+    stroke-dashoffset: 633;
+}
+
+.wisdom-job {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 90%);
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: white;
+    width: 600px;
+    line-height: 1.5;
+    opacity: 0;
+}
+
+.wisdom-job-two {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 340%);
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: white;
+    width: 600px;
+    line-height: 1.5;
+    opacity: 0;
+    text-align: center;
+}
+
+.wisdom-chart {
+    position: absolute;
+    left: 50%;
+    transform: translateY(-120px);
+    opacity: 0;
+}
+
+.wisdom-lineone {
+    stroke-dasharray: 179;
+    stroke-dashoffset: 179;
+}
+
+/* STAGE FOUR */
+
+.stage-four {
+    background-color: white;
+    padding-top: 500px;
+    padding-bottom: 500px;
 }

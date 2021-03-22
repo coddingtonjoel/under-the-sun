@@ -247,25 +247,25 @@ tl2.staggerFrom(
         ".squares-eight",
         ".squares-nine",
     ],
-    5,
+    10,
     { transform: "scale(0)", opacity: 0, ease: "power4.out" },
     0.2
 );
 
 // squares on bottom disappear
-tl2.to(".squares-bottom", 2, { opacity: 0, delay: 1 });
+tl2.to(".squares-bottom", 3, { opacity: 0, delay: 1 });
 
 // rest of squares fade away above
-tl2.to(".squares", 3, { opacity: 0, y: "-700px", ease: "power2.out" }, "-=1");
+tl2.to(".squares", 6, { opacity: 0, y: "-700px", ease: "power2.out" }, "-=3");
 
 // reposition words "mind" and "body"
-tl2.to(".mind", 2, { x: -100, ease: "power4.out" });
-tl2.to(".body", 2, { x: 100, ease: "power4.out" }, "-=2");
-tl2.to(".mind", 2, { y: 50, ease: "power4.out" });
-tl2.to(".body", 2, { y: -47, ease: "power4.out" }, "-=2");
+tl2.to(".mind", 4, { x: -100, ease: "power4.out" });
+tl2.to(".body", 4, { x: 100, ease: "power4.out" }, "-=4");
+tl2.to(".mind", 4, { y: 50, ease: "power4.out" });
+tl2.to(".body", 4, { y: -47, ease: "power4.out" }, "-=4");
 
 // move header up, 6 seconds ago
-tl2.to(".stage-two-header", 3, { y: -350, ease: "power4.out" }, "-=6");
+tl2.to(".stage-two-header", 6, { y: -350, ease: "power4.out" }, "-=12");
 
 // draw line one
 tl2.to(".mind-body-chart-lineone", 0, {
@@ -379,16 +379,19 @@ tl2.staggerTo(
     0.5
 );
 
+// move up concl
 tl2.to(".mind-body-concl", 7, {
     y: -100,
 });
 
+// show concl sub
 tl2.to(".mind-body-concl-two", 3, {
     opacity: 1,
+    delay: 4,
 });
 
 let scene2 = new ScrollMagic.Scene({
-    duration: 3000,
+    duration: 5000,
     triggerHook: 0.5,
     triggerElement: ".mind-body-container",
 })
@@ -404,6 +407,24 @@ let scene2 = new ScrollMagic.Scene({
 
 let tl3 = new TimelineMax();
 
+// animate header underline
+tl3.to(".wisdom-line", 2, { strokeDashoffset: 0 });
+
+// bring up job verse
+tl3.to(".wisdom-job", 2, { opacity: 1, y: 40 });
+
+// move header up
+tl3.to(".stage-three-header", 3, { y: -345, delay: 4 });
+
+// draw chart
+tl3.to(".wisdom-chart", 0, { opacity: 1 });
+tl3.to(".wisdom-circleone", 3, { strokeDashoffset: 0 });
+tl3.to(".wisdom-lineone", 3, { strokeDashoffset: 0 });
+tl3.to(".wisdom-circletwo", 3, { strokeDashoffset: 0 });
+
+// bring up job verse
+tl3.to(".wisdom-job-two", 2, { opacity: 1, y: 180 });
+
 let scene3 = new ScrollMagic.Scene({
     duration: 3000,
     triggerHook: 0.5,
@@ -412,3 +433,17 @@ let scene3 = new ScrollMagic.Scene({
     .setPin(".wisdom-container")
     .setTween(tl3)
     .addTo(controller);
+
+let tl4 = new TimelineMax();
+
+let scene4 = new ScrollMagic.Scene({
+    duration: 3000,
+    triggerHook: 0.5,
+    triggerElement: ".display-container",
+})
+    .setPin(".display-container")
+    .setTween(tl4)
+    .addTo(controller);
+
+// const shape = document.querySelector(".wisdom-lineone");
+// console.log(shape.getTotalLength());

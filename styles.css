@@ -149,3 +149,73 @@ html {
     font-weight: 300;
     font-size: 1.4rem;
 }
+
+.mind-body-chart {
+    position: absolute;
+    left: 45.75%;
+    top: 100%;
+    transform: translate(-50%, -43%);
+}
+
+.mind-body-chart-lineone,
+.mind-body-chart-linetwo,
+.mind-body-chart-linethree,
+.mind-body-chart-linefour,
+.mind-body-chart-circleone,
+.mind-body-chart-circletwo,
+.mind-body-chart-circlethree {
+    opacity: 0;
+    transform-origin: 50% 50%;
+}
+
+.mind-body-chart-lineone {
+    stroke-dashoffset: 195;
+    stroke-dasharray: 195;
+}
+
+.mind-body-chart-linetwo {
+    stroke-dashoffset: 174.2;
+    stroke-dasharray: 174.2;
+}
+
+.mind-body-chart-linethree {
+    stroke-dashoffset: 175.5;
+    stroke-dasharray: 175.5;
+}
+
+.mind-body-chart-linefour {
+    stroke-dashoffset: 145;
+    stroke-dasharray: 145;
+}
+
+.mind-body-chart-circleone,
+.mind-body-chart-circletwo,
+.mind-body-chart-circlethree {
+    stroke-dasharray: 113;
+    stroke-dashoffset: 113;
+}
+
+.mind-body-interp {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    position: absolute;
+    opacity: 0;
+}
+
+.mind-body-descartes {
+    left: 68%;
+    transform: translate(-50%, -135%);
+}
+
+.mind-body-bacon {
+    left: 23%;
+    transform: translate(-50%, 85%);
+}
+
+.mind-body-pascal {
+    left: 68%;
+    transform: translate(-50%, 245%);
+}

@@ -11,10 +11,10 @@ let controller = new ScrollMagic.Controller();
 tl.to(".header-sub", 2, { opacity: 0 });
 
 // header shift left
-tl.to(".header", 1.5, { right: "13%", top: "100%" });
+tl.to(".header", 2, { right: "13%", top: "100%" });
 
 // line rotate middle
-tl.to(".line", 1, {
+tl.to(".line", 3, {
     transform: "rotate(90deg) translate(0)",
     width: "100px",
     top: "92%",
@@ -22,37 +22,37 @@ tl.to(".line", 1, {
 });
 
 // header-alts in
-tl.to(".header-alt-1", 1, {
+tl.to(".header-alt-1", 2, {
     opacity: 0.3,
 })
-    .to(".header-alt-1", 1, {
+    .to(".header-alt-1", 2, {
         delay: 1,
         opacity: 0,
     })
-    .to(".header-alt-2", 1, {
+    .to(".header-alt-2", 2, {
         opacity: 0.3,
     })
-    .to(".header-alt-2", 1, {
+    .to(".header-alt-2", 2, {
         delay: 1,
         opacity: 0,
     })
-    .to(".header-alt-3", 1, {
+    .to(".header-alt-3", 2, {
         opacity: 0.3,
     })
-    .to(".header-alt-3", 1, {
+    .to(".header-alt-3", 2, {
         delay: 1,
         opacity: 0,
     })
-    .to(".header-alt-4", 1, {
+    .to(".header-alt-4", 2, {
         opacity: 0.3,
     })
-    .to(".header-alt-4", 1, {
+    .to(".header-alt-4", 2, {
         delay: 1,
         opacity: 0,
     });
 
 // header fades out
-tl.to(".header", 1, { opacity: 0 });
+tl.to(".header", 3, { opacity: 0 });
 
 // line shifts to left
 tl.to(".line", 2, {
@@ -265,7 +265,92 @@ tl2.to(".mind", 2, { y: 50, ease: "power4.out" });
 tl2.to(".body", 2, { y: -47, ease: "power4.out" }, "-=2");
 
 // move header up, 6 seconds ago
-tl2.to(".stage-two-header", 3, { y: -100, ease: "power2.out" }, "-=6");
+tl2.to(".stage-two-header", 3, { y: -350, ease: "power4.out" }, "-=6");
+
+// draw line one
+tl2.to(".mind-body-chart-lineone", 0, {
+    opacity: 1,
+});
+
+tl2.to(".mind-body-chart-lineone", 3, {
+    strokeDashoffset: "0",
+    ease: "power1.out",
+});
+
+// draw circle one
+tl2.to(".mind-body-chart-circleone", 0, {
+    opacity: 1,
+});
+
+tl2.to(".mind-body-chart-circleone", 3, {
+    strokeDashoffset: "0",
+    ease: "power1.out",
+});
+
+// fade in descartes idea
+tl2.to(".mind-body-descartes", 3, {
+    opacity: 1,
+});
+
+// draw line two
+tl2.to(".mind-body-chart-linetwo", 0, {
+    opacity: 1,
+});
+
+tl2.to(".mind-body-chart-linetwo", 3, {
+    strokeDashoffset: "0",
+    ease: "power1.out",
+});
+
+// draw circle two
+tl2.to(".mind-body-chart-circletwo", 0, {
+    opacity: 1,
+});
+
+tl2.to(".mind-body-chart-circletwo", 3, {
+    strokeDashoffset: "0",
+    ease: "power1.out",
+});
+
+// fade in bacon idea
+tl2.to(".mind-body-bacon", 3, {
+    opacity: 1,
+});
+
+// draw line three
+tl2.to(".mind-body-chart-linethree", 0, {
+    opacity: 1,
+});
+
+tl2.to(".mind-body-chart-linethree", 3, {
+    strokeDashoffset: "0",
+    ease: "power1.out",
+});
+
+// draw circle three
+tl2.to(".mind-body-chart-circlethree", 0, {
+    opacity: 1,
+});
+
+tl2.to(".mind-body-chart-circlethree", 3, {
+    strokeDashoffset: "0",
+    ease: "power1.out",
+});
+
+// fade in pascal idea
+tl2.to(".mind-body-pascal", 3, {
+    opacity: 1,
+});
+
+// draw line three
+tl2.to(".mind-body-chart-linefour", 0, {
+    opacity: 1,
+});
+
+tl2.to(".mind-body-chart-linefour", 3, {
+    strokeDashoffset: "0",
+    ease: "power1.out",
+});
 
 let scene2 = new ScrollMagic.Scene({
     duration: 3000,
@@ -275,3 +360,6 @@ let scene2 = new ScrollMagic.Scene({
     .setPin(".mind-body-container")
     .setTween(tl2)
     .addTo(controller);
+
+const shape = document.querySelector(".mind-body-chart-linefour");
+console.log(shape.getTotalLength());

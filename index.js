@@ -352,6 +352,41 @@ tl2.to(".mind-body-chart-linefour", 3, {
     ease: "power1.out",
 });
 
+// fade in mind body conclusion
+tl2.to(".mind-body-concl", 3, {
+    opacity: 1,
+});
+
+// hide all other content besides conclusion
+tl2.staggerTo(
+    [
+        ".stage-two-header",
+        ".mind-body-chart-lineone",
+        ".mind-body-chart-circleone",
+        ".mind-body-descartes",
+        ".mind-body-chart-linetwo",
+        ".mind-body-chart-circletwo",
+        ".mind-body-bacon",
+        ".mind-body-chart-linethree",
+        ".mind-body-chart-circlethree",
+        ".mind-body-pascal",
+        ".mind-body-chart-linefour",
+    ],
+    3,
+    {
+        opacity: 0,
+    },
+    0.5
+);
+
+tl2.to(".mind-body-concl", 7, {
+    y: -100,
+});
+
+tl2.to(".mind-body-concl-two", 3, {
+    opacity: 1,
+});
+
 let scene2 = new ScrollMagic.Scene({
     duration: 3000,
     triggerHook: 0.5,
@@ -361,5 +396,19 @@ let scene2 = new ScrollMagic.Scene({
     .setTween(tl2)
     .addTo(controller);
 
-const shape = document.querySelector(".mind-body-chart-linefour");
-console.log(shape.getTotalLength());
+//----------------
+// SCENE 3
+//
+// WHAT IS WISDOM?
+//----------------
+
+let tl3 = new TimelineMax();
+
+let scene3 = new ScrollMagic.Scene({
+    duration: 3000,
+    triggerHook: 0.5,
+    triggerElement: ".wisdom-container",
+})
+    .setPin(".wisdom-container")
+    .setTween(tl3)
+    .addTo(controller);

@@ -12,6 +12,11 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    min-height: 850px;
+    min-width: 1750px;
+}
+
 /* SCENE ONE */
 
 .stage-one {
@@ -127,7 +132,7 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.95);
+    transform: translate(-50%, -50%) scale(0.8);
 }
 
 .stage-two-header {
@@ -275,7 +280,7 @@ html {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 90%);
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
     color: white;
@@ -288,7 +293,7 @@ html {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 340%);
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
     color: white;

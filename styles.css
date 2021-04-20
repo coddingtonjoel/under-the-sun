@@ -1,3 +1,33 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -144,7 +174,7 @@ body {
 }
 
 .stage-two-header h1 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 900;
     font-size: 3.5rem;
 }
@@ -203,7 +233,7 @@ body {
 }
 
 .mind-body-interp {
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 300;
     width: 500px;
     font-size: 1.1rem;
@@ -230,7 +260,7 @@ body {
 .mind-body-concl {
     font-weight: 700;
     font-size: 1.2rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     position: absolute;
     transform: translate(-50%, 1380%);
     left: 50%;
@@ -243,7 +273,7 @@ body {
     text-align: center;
     font-weight: 700;
     font-size: 1.5rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     transform: translateY(-30px);
 }
 
@@ -260,12 +290,12 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -250%);
+    transform: translate(-50%, -150%);
     text-align: center;
 }
 
 .stage-three-header h1 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 900;
     font-size: 3.5rem;
     color: white;
@@ -280,7 +310,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 90%);
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
     color: white;
@@ -289,17 +319,32 @@ body {
     opacity: 0;
 }
 
-.wisdom-job-two {
+.wisdom-proverbs {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 340%);
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
     color: white;
     width: 600px;
     line-height: 1.5;
     opacity: 0;
+    text-align: center;
+}
+
+.wisdom-definition {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: white;
+    width: 600px;
+    line-height: 1.6;
+    opacity: 0;
+    width: 850px;
     text-align: center;
 }
 
@@ -321,4 +366,63 @@ body {
     background-color: white;
     padding-top: 500px;
     padding-bottom: 500px;
+}
+
+.stage-four h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    width: 750px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -90%);
+    text-align: center;
+}
+
+.app-desc1,
+.app-desc2,
+.app-desc3,
+.app-desc4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 750px;
+    left: 50%;
+    position: absolute;
+    text-transform: uppercase;
+    transform: translate(-50%, 20%);
+    text-align: center;
+    opacity: 0;
+}
+
+.app-book-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    left: 50%;
+    margin-top: 100px;
+}
+
+.app-b1,
+.app-b2,
+.app-b3 {
+    transform: translateY(50px);
+}
+
+.app-b4,
+.app-b5,
+.app-b6 {
+    position: absolute;
+}
+
+.app-book {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 7px;
+    text-align: center;
+    opacity: 0;
 }

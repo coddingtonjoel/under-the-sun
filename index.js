@@ -262,7 +262,7 @@ tl2.to(".squares", 6, { opacity: 0, y: "-700px", ease: "power2.out" }, "-=3");
 tl2.to(".mind", 4, { x: -100, ease: "power4.out" });
 tl2.to(".body", 4, { x: 100, ease: "power4.out" }, "-=4");
 tl2.to(".mind", 4, { y: 50, ease: "power4.out" });
-tl2.to(".body", 4, { y: -47, ease: "power4.out" }, "-=4");
+tl2.to(".body", 4, { y: -57, ease: "power4.out" }, "-=4");
 
 // move header up, 6 seconds ago
 tl2.to(".stage-two-header", 6, { y: -350, ease: "power4.out" }, "-=12");
@@ -408,7 +408,7 @@ let scene2 = new ScrollMagic.Scene({
 let tl3 = new TimelineMax();
 
 // animate header underline
-tl3.to(".wisdom-line", 2, { strokeDashoffset: 0 });
+tl3.to(".wisdom-line", 4, { strokeDashoffset: 0 });
 
 // bring up job verse
 tl3.to(".wisdom-job", 2, { opacity: 1, y: 40 });
@@ -422,8 +422,26 @@ tl3.to(".wisdom-circleone", 3, { strokeDashoffset: 0 });
 tl3.to(".wisdom-lineone", 3, { strokeDashoffset: 0 });
 tl3.to(".wisdom-circletwo", 3, { strokeDashoffset: 0 });
 
-// bring up job verse
-tl3.to(".wisdom-job-two", 2, { opacity: 1, y: 180 });
+// bring up proverbs verse
+tl3.to(".wisdom-proverbs", 2, { opacity: 1, y: 180 });
+
+// clear everything and bring definition to center
+tl3.to(".wisdom-line", 3, { opacity: 0, delay: 15 });
+tl3.to(".wisdom-job", 3, { opacity: 0 }, "-=3");
+tl3.to(".stage-three-header", 3, { opacity: 0 }, "-=6");
+tl3.to(".wisdom-chart", 3, { opacity: 0 }, "-=6");
+tl3.to(".wisdom-proverbs", 3, { opacity: 0 }, "-=6");
+
+// bring up wisdom definition
+tl3.fromTo(
+    ".wisdom-definition",
+    6,
+    { opacity: 0, y: 90 },
+    { opacity: 1, y: -20 }
+);
+
+// delay timeline from progressing briefly
+tl3.to(".wisdom.line", 20, { y: 1 });
 
 let scene3 = new ScrollMagic.Scene({
     duration: 3000,
@@ -435,6 +453,98 @@ let scene3 = new ScrollMagic.Scene({
     .addTo(controller);
 
 let tl4 = new TimelineMax();
+
+// move up header
+tl4.to(".stage-four-header", 4, { y: -150 });
+
+// bring up desc #1
+tl4.fromTo(".app-desc1", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+
+// bring up books #1
+tl4.staggerTo([".app-b1", ".app-b2", ".app-b3"], 2, {
+    y: -30,
+    opacity: 1,
+    stagger: 0.5,
+    ease: "power1.out",
+});
+
+// bring down books #1
+tl4.staggerTo([".app-b3", ".app-b2", ".app-b1"], 2, {
+    delay: 10,
+    y: 0,
+    opacity: 0,
+    stagger: 0.5,
+    ease: "power1.out",
+});
+
+// bring down desc #1
+tl4.to(".app-desc1", 2, {
+    opacity: 0,
+    y: 60,
+});
+
+// bring up desc #2
+tl4.fromTo(".app-desc2", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+
+// bring up books #2
+tl4.to(".app-b4", 2, {
+    y: -60,
+    opacity: 1,
+    ease: "power1.out",
+});
+
+// bring down books #2
+tl4.to(".app-b4", 2, {
+    delay: 10,
+    y: 0,
+    opacity: 0,
+    ease: "power1.out",
+});
+
+// bring down desc #2
+tl4.to(".app-desc2", 2, { opacity: 0, y: 60 });
+
+// bring up desc #3
+tl4.fromTo(".app-desc3", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+
+// bring up books #3
+tl4.to(".app-b5", 2, {
+    y: -60,
+    opacity: 1,
+    ease: "power1.out",
+});
+
+// bring down books #3
+tl4.to(".app-b5", 2, {
+    delay: 10,
+    y: 0,
+    opacity: 0,
+    ease: "power1.out",
+});
+
+// bring down desc #3
+tl4.to(".app-desc3", 2, { opacity: 0, y: 60 });
+
+// bring up desc #4
+tl4.fromTo(".app-desc4", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+
+// bring up books #4
+tl4.to(".app-b6", 2, {
+    y: -60,
+    opacity: 1,
+    ease: "power1.out",
+});
+
+// bring down books #4
+tl4.to(".app-b6", 2, {
+    delay: 10,
+    y: 0,
+    opacity: 0,
+    ease: "power1.out",
+});
+
+// bring down desc #4
+tl4.to(".app-desc4", 2, { opacity: 0, y: 60 });
 
 let scene4 = new ScrollMagic.Scene({
     duration: 3000,

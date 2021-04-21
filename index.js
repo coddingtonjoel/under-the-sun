@@ -455,103 +455,145 @@ let scene3 = new ScrollMagic.Scene({
 let tl4 = new TimelineMax();
 
 // move up header
-tl4.to(".stage-four-header", 4, { y: -150 });
+tl4.to(".stage-four-header", 7, { y: -250, delay: 7, ease: "power1.out" });
 
 // bring up desc #1
-tl4.fromTo(".app-desc1", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+tl4.fromTo(
+    ".app-desc1",
+    5,
+    { opacity: 0, y: 60 },
+    { opacity: 1, y: 0, delay: 5 }
+);
 
 // bring up books #1
-tl4.staggerTo([".app-b1", ".app-b2", ".app-b3"], 2, {
+tl4.staggerTo([".app-b1", ".app-b2", ".app-b3"], 5, {
     y: -30,
     opacity: 1,
     stagger: 0.5,
     ease: "power1.out",
 });
 
-// bring down books #1
-tl4.staggerTo([".app-b3", ".app-b2", ".app-b1"], 2, {
-    delay: 10,
-    y: 0,
+// bring down desc #1
+tl4.to(".app-desc1", 5, {
     opacity: 0,
-    stagger: 0.5,
-    ease: "power1.out",
+    delay: 10,
 });
 
-// bring down desc #1
-tl4.to(".app-desc1", 2, {
-    opacity: 0,
-    y: 60,
-});
+// bring down books #1
+tl4.to(
+    [".app-b1", ".app-b2", ".app-b3"],
+    5,
+    {
+        opacity: 0,
+        stagger: 1.5,
+        ease: "power1.out",
+    },
+    "-=5"
+);
 
 // bring up desc #2
-tl4.fromTo(".app-desc2", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+tl4.fromTo(
+    ".app-desc2",
+    5,
+    { opacity: 0, y: 60 },
+    { opacity: 1, y: 0, delay: 3 }
+);
 
 // bring up books #2
-tl4.to(".app-b4", 2, {
+tl4.to(".app-b4", 5, {
     y: -60,
     opacity: 1,
-    ease: "power1.out",
-});
-
-// bring down books #2
-tl4.to(".app-b4", 2, {
-    delay: 10,
-    y: 0,
-    opacity: 0,
     ease: "power1.out",
 });
 
 // bring down desc #2
-tl4.to(".app-desc2", 2, { opacity: 0, y: 60 });
+tl4.to(".app-desc2", 5, { opacity: 0, delay: 10 });
+
+// bring down books #2
+tl4.to(
+    ".app-b4",
+    5,
+    {
+        opacity: 0,
+        ease: "power1.out",
+    },
+    "-=5"
+);
 
 // bring up desc #3
-tl4.fromTo(".app-desc3", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+tl4.fromTo(
+    ".app-desc3",
+    5,
+    { opacity: 0, y: 60 },
+    { opacity: 1, y: 0, delay: 3 }
+);
 
 // bring up books #3
-tl4.to(".app-b5", 2, {
+tl4.to(".app-b5", 5, {
     y: -60,
     opacity: 1,
-    ease: "power1.out",
-});
-
-// bring down books #3
-tl4.to(".app-b5", 2, {
-    delay: 10,
-    y: 0,
-    opacity: 0,
     ease: "power1.out",
 });
 
 // bring down desc #3
-tl4.to(".app-desc3", 2, { opacity: 0, y: 60 });
+tl4.to(".app-desc3", 5, { opacity: 0, delay: 10 });
+
+// bring down books #3
+tl4.to(
+    ".app-b5",
+    5,
+    {
+        opacity: 0,
+        ease: "power1.out",
+    },
+    "-=5"
+);
 
 // bring up desc #4
-tl4.fromTo(".app-desc4", 2, { opacity: 0, y: 60 }, { opacity: 1, y: 0 });
+tl4.fromTo(
+    ".app-desc4",
+    5,
+    { opacity: 0, y: 60 },
+    { opacity: 1, y: 0, delay: 3 }
+);
 
 // bring up books #4
-tl4.to(".app-b6", 2, {
+tl4.to(".app-b6", 5, {
     y: -60,
     opacity: 1,
     ease: "power1.out",
 });
 
-// bring down books #4
-tl4.to(".app-b6", 2, {
-    delay: 10,
-    y: 0,
-    opacity: 0,
-    ease: "power1.out",
-});
-
 // bring down desc #4
-tl4.to(".app-desc4", 2, { opacity: 0, y: 60 });
+tl4.to(".app-desc4", 10, { opacity: 0, delay: 10 });
+
+// bring down books #4
+tl4.to(
+    ".app-b6",
+    10,
+    {
+        opacity: 0,
+    },
+    "-=10"
+);
+
+tl4.to(".stage-four-header", 10, { opacity: 0 }, "-=10");
+
+tl4.fromTo(
+    ".app-final",
+    20,
+    { opacity: 0, y: -100 },
+    { opacity: 1, y: -185, delay: 5, ease: "power1.out" }
+);
+
+tl4.to(".app-final-sub", 10, { opacity: 1 });
 
 let scene4 = new ScrollMagic.Scene({
-    duration: 3000,
+    duration: 5000,
     triggerHook: 0.5,
-    triggerElement: ".display-container",
+    triggerElement: ".app-container",
 })
-    .setPin(".display-container")
+    .setPin(".app-container")
     .setTween(tl4)
     .addTo(controller);
 

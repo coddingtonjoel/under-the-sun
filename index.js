@@ -408,7 +408,7 @@ let scene2 = new ScrollMagic.Scene({
 let tl3 = new TimelineMax();
 
 // animate header underline
-tl3.to(".wisdom-line", 4, { strokeDashoffset: 0 });
+tl3.to(".wisdom-line", 4, { strokeDashoffset: 0, delay: 5 });
 
 // bring up job verse
 tl3.to(".wisdom-job", 2, { opacity: 1, y: 40 });
@@ -457,12 +457,43 @@ let tl4 = new TimelineMax();
 // move up header
 tl4.to(".stage-four-header", 7, { y: -250, delay: 7, ease: "power1.out" });
 
+// draw in diamonds
+tl4.staggerTo(
+    [
+        ".app-diamond-l-one",
+        ".app-diamond-l-two",
+        ".app-diamond-l-three",
+        ".app-diamond-l-four",
+        ".app-diamond-r-one",
+        ".app-diamond-r-two",
+        ".app-diamond-r-three",
+        ".app-diamond-r-four",
+    ],
+    5,
+    { strokeDashoffset: 0, stagger: 1.5 }
+);
+
 // bring up desc #1
 tl4.fromTo(
     ".app-desc1",
     5,
     { opacity: 0, y: 60 },
     { opacity: 1, y: 0, delay: 5 }
+);
+
+// rotate diamonds
+tl4.to(
+    ".app-diamond-l",
+    5,
+    { transform: "rotate(45deg)", ease: "power2.out" },
+    "-=3"
+);
+
+tl4.to(
+    ".app-diamond-r",
+    5,
+    { transform: "rotate(-45deg)", ease: "power2.out" },
+    "-=5"
 );
 
 // bring up books #1
@@ -491,12 +522,28 @@ tl4.to(
     "-=5"
 );
 
+// rotate diamonds
+tl4.to(
+    ".app-diamond-l",
+    5,
+    { transform: "rotate(90deg)", ease: "power2.out" },
+    "-=3"
+);
+
+tl4.to(
+    ".app-diamond-r",
+    5,
+    { transform: "rotate(-90deg)", ease: "power2.out" },
+    "-=5"
+);
+
 // bring up desc #2
 tl4.fromTo(
     ".app-desc2",
     5,
     { opacity: 0, y: 60 },
-    { opacity: 1, y: 0, delay: 3 }
+    { opacity: 1, y: 0, delay: 3 },
+    "-=3"
 );
 
 // bring up books #2
@@ -520,12 +567,28 @@ tl4.to(
     "-=5"
 );
 
+// rotate diamonds
+tl4.to(
+    ".app-diamond-l",
+    5,
+    { transform: "rotate(135deg)", ease: "power2.out" },
+    "-=3"
+);
+
+tl4.to(
+    ".app-diamond-r",
+    5,
+    { transform: "rotate(-135deg)", ease: "power2.out" },
+    "-=5"
+);
+
 // bring up desc #3
 tl4.fromTo(
     ".app-desc3",
     5,
     { opacity: 0, y: 60 },
-    { opacity: 1, y: 0, delay: 3 }
+    { opacity: 1, y: 0, delay: 3 },
+    "-=3"
 );
 
 // bring up books #3
@@ -549,12 +612,28 @@ tl4.to(
     "-=5"
 );
 
+// rotate diamonds
+tl4.to(
+    ".app-diamond-l",
+    5,
+    { transform: "rotate(90deg)", ease: "power2.out" },
+    "-=3"
+);
+
+tl4.to(
+    ".app-diamond-r",
+    5,
+    { transform: "rotate(-90deg)", ease: "power2.out" },
+    "-=5"
+);
+
 // bring up desc #4
 tl4.fromTo(
     ".app-desc4",
     5,
     { opacity: 0, y: 60 },
-    { opacity: 1, y: 0, delay: 3 }
+    { opacity: 1, y: 0, delay: 3 },
+    "-=3"
 );
 
 // bring up books #4
@@ -578,6 +657,7 @@ tl4.to(
 );
 
 tl4.to(".stage-four-header", 10, { opacity: 0 }, "-=10");
+tl4.to(".app-diamond", 10, { opacity: 0 }, "-=10");
 
 tl4.fromTo(
     ".app-final",
@@ -589,13 +669,10 @@ tl4.fromTo(
 tl4.to(".app-final-sub", 10, { opacity: 1 });
 
 let scene4 = new ScrollMagic.Scene({
-    duration: 5000,
+    duration: 6000,
     triggerHook: 0.5,
     triggerElement: ".app-container",
 })
     .setPin(".app-container")
     .setTween(tl4)
     .addTo(controller);
-
-// const shape = document.querySelector(".wisdom-lineone");
-// console.log(shape.getTotalLength());

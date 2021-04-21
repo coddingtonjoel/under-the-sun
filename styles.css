@@ -387,12 +387,36 @@ body {
     justify-content: center;
 }
 
+.app-diamond-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    transform: translateY(-80%);
+}
+
+.app-diamond {
+    flex: 0 0 60%;
+}
+
+.app-diamond-l,
+.app-diamond-r {
+    transform-origin: center;
+}
+
+.app-diamond-l path,
+.app-diamond-r path {
+    stroke-dasharray: 245.45;
+    stroke-dashoffset: -245.45;
+}
+
 .app-desc1,
 .app-desc2,
 .app-desc3,
 .app-desc4 {
     font-family: "Open Sans", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     width: 1200px;
     left: 50%;

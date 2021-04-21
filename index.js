@@ -441,7 +441,7 @@ tl3.fromTo(
 );
 
 // delay timeline from progressing briefly
-tl3.to(".wisdom.line", 20, { y: 1 });
+tl3.to(".wisdom-line", 20, { y: 1 });
 
 let scene3 = new ScrollMagic.Scene({
     duration: 3000,

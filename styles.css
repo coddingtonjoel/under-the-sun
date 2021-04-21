@@ -390,14 +390,18 @@ body {
 .app-diamond-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
-    width: 100vw;
+    width: 100%;
     transform: translateY(-80%);
 }
 
 .app-diamond {
-    flex: 0 0 60%;
+    flex: 0 0 40%;
+    overflow-x: hidden;
+}
+
+.app-diamond-l {
 }
 
 .app-diamond-l,
